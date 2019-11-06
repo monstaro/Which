@@ -45,13 +45,12 @@ function flipCard() {
     }
     if (deck.selectedCards.length === 2) {
         deck.checkSelectedCards();
-        hideCards();
         setTimeout(function() {
             unflipCard()
         }, 500)
+        hideCards();
     }
 }
-
 
 function unflipCard() {
     var cardKids = cardSection.children;
@@ -63,7 +62,7 @@ function unflipCard() {
 }
 
 function hideCards() {
-    matches.innerHTML = `<div class="matches">Matches This Round: ${deck.matches}</div>`
+    matches.innerHTML = `<div class="matches">Matches This Round: ${deck.matches}</div>`;
     var cardKids = cardSection.children;
     for (var i = 0; i < cardKids.length; i++) {
         var parsedDataId = parseInt(cardKids[i].dataset.id)
@@ -71,7 +70,7 @@ function hideCards() {
             cardKids[i].classList.add('hide')
         }
     }
-    displayCongrats()
+    displayCongrats();
 }
 
 function displayCongrats() {
