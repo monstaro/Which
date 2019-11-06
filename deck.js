@@ -3,20 +3,21 @@ class Deck {
         this.cards = [];
         this.matchedCards = [];
         this.selectedCards = [];
-        this.matches = matches;
+        this.matches = 0;
     }
     shuffle() {
 
     }
     checkSelectedCards() {
-        //look at selected cards array.
-        //if index 0 of selected cards matches index 1 
-        //carun moveToMatched()
-
-        //else remove the id's from the selected cards array
-
+        if (this.selectedCards[0].paired === this.selectedCards[1].paired) {
+            this.matchedCards.unshift(this.selectedCards[0], this.selectedCards[1])
+            this.selectedCards = [];
+            this.matches++;
+        } else {
+            this.selectedCards = [];
+        }
     }
     moveToMatched() {
-
+        //
     }
 }
